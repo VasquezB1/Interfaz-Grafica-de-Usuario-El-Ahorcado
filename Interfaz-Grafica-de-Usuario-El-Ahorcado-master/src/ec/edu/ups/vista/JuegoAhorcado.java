@@ -187,7 +187,7 @@ public class JuegoAhorcado extends javax.swing.JFrame {
                     jButton29.setIcon(imgs[++err]);
                     //SI SE LLEGA A LOS 5 ERRORES ENTONCES SE PIERDE EL JUEGO Y SE MANDA EL MENSAGE DE:
                     if (err == 4) {
-                        JOptionPane.showMessageDialog(this, "Intenta de nuevo: \n" + msgs[ran]);
+                        JOptionPane.showMessageDialog(this, "Intenta de nuevo la palabra era: \n" + msgs[ran]);
                         iniciar();
                         return;
                     }
@@ -235,20 +235,25 @@ public class JuegoAhorcado extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("MexicanHangedPerson By Pear Soft&Games");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("Juego del Ahorcado");
+        jTextField1.setBorder(null);
         jTextField1.setEnabled(false);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, -1, -1));
 
         jButton28.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton28.setText("Reiniciar");
@@ -257,16 +262,20 @@ public class JuegoAhorcado extends javax.swing.JFrame {
                 jButton28ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 177, 57));
 
         jTextPane1.setEditable(false);
         jTextPane1.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jScrollPane1.setViewportView(jTextPane1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 341, 75));
 
         jButton29.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton29ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 60, 280, 378));
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
@@ -276,26 +285,32 @@ public class JuegoAhorcado extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
 
         jButton9.setBackground(new java.awt.Color(255, 255, 255));
         jButton9.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton9.setText("H");
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, -1, -1));
 
         jButton16.setBackground(new java.awt.Color(255, 255, 255));
         jButton16.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton16.setText("O");
+        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, -1));
 
         jButton17.setBackground(new java.awt.Color(255, 255, 255));
         jButton17.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton17.setText("P");
+        getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, -1, -1));
 
         jButton10.setBackground(new java.awt.Color(255, 255, 255));
         jButton10.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton10.setText("I");
+        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, -1, -1));
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton3.setText("B");
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, -1));
 
         jButton11.setBackground(new java.awt.Color(255, 255, 255));
         jButton11.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
@@ -305,211 +320,106 @@ public class JuegoAhorcado extends javax.swing.JFrame {
                 jButton11ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, -1, -1));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton4.setText("C");
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, -1, -1));
 
         jButton18.setBackground(new java.awt.Color(255, 255, 255));
         jButton18.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton18.setText("Q");
+        getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, -1, -1));
 
         jButton23.setBackground(new java.awt.Color(255, 255, 255));
         jButton23.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton23.setText("V");
+        getContentPane().add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, -1, -1));
 
         jButton24.setBackground(new java.awt.Color(255, 255, 255));
         jButton24.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton24.setText("W");
+        getContentPane().add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, -1, -1));
 
         jButton25.setBackground(new java.awt.Color(255, 255, 255));
         jButton25.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton25.setText("X");
+        getContentPane().add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, -1, -1));
 
         jButton19.setBackground(new java.awt.Color(255, 255, 255));
         jButton19.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton19.setText("R");
+        getContentPane().add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, -1, -1));
 
         jButton12.setBackground(new java.awt.Color(255, 255, 255));
         jButton12.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton12.setText("K");
+        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
 
         jButton5.setBackground(new java.awt.Color(255, 255, 255));
         jButton5.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton5.setText("D");
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, -1, -1));
 
         jButton6.setBackground(new java.awt.Color(255, 255, 255));
         jButton6.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton6.setText("E");
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, -1, -1));
 
         jButton13.setBackground(new java.awt.Color(255, 255, 255));
         jButton13.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton13.setText("L");
+        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, -1, -1));
 
         jButton20.setBackground(new java.awt.Color(255, 255, 255));
         jButton20.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton20.setText("S");
+        getContentPane().add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, -1, -1));
 
         jButton26.setBackground(new java.awt.Color(255, 255, 255));
         jButton26.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton26.setText("Y");
+        getContentPane().add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
 
         jButton27.setBackground(new java.awt.Color(255, 255, 255));
         jButton27.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton27.setText("Z");
+        getContentPane().add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, -1, -1));
 
         jButton21.setBackground(new java.awt.Color(255, 255, 255));
         jButton21.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton21.setText("T");
+        getContentPane().add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, -1, -1));
 
         jButton22.setBackground(new java.awt.Color(255, 255, 255));
         jButton22.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton22.setText("U");
+        getContentPane().add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, -1, -1));
 
         jButton15.setBackground(new java.awt.Color(255, 255, 255));
         jButton15.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton15.setText("N");
+        getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, -1, -1));
 
         jButton7.setBackground(new java.awt.Color(255, 255, 255));
         jButton7.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton7.setText("F");
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, -1, -1));
 
         jButton8.setBackground(new java.awt.Color(255, 255, 255));
         jButton8.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton8.setText("G");
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, -1, -1));
 
         jButton14.setBackground(new java.awt.Color(255, 255, 255));
         jButton14.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jButton14.setText("M");
+        getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 155, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton4))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton9)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton10)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton11)))
-                                .addGap(10, 10, 10)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton12)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton13)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton14)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton15))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton8))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton23)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton24)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton25)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton26)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton27))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jButton16)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton17)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton18)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton19)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton20)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton21)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton22))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(98, 98, 98)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(259, 259, 259)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 112, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3)
-                            .addComponent(jButton4)
-                            .addComponent(jButton5)
-                            .addComponent(jButton6)
-                            .addComponent(jButton7)
-                            .addComponent(jButton8))
-                        .addGap(8, 8, 8)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton9)
-                            .addComponent(jButton10)
-                            .addComponent(jButton11)
-                            .addComponent(jButton12)
-                            .addComponent(jButton13)
-                            .addComponent(jButton14)
-                            .addComponent(jButton15))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton16)
-                            .addComponent(jButton17)
-                            .addComponent(jButton18)
-                            .addComponent(jButton19)
-                            .addComponent(jButton20)
-                            .addComponent(jButton21)
-                            .addComponent(jButton22))
-                        .addGap(15, 15, 15)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton23)
-                            .addComponent(jButton24)
-                            .addComponent(jButton25)
-                            .addComponent(jButton26)
-                            .addComponent(jButton27)))
-                    .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/ups/imagenes/logo.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -605,6 +515,8 @@ public class JuegoAhorcado extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextPane jTextPane1;
