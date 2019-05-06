@@ -21,31 +21,32 @@ import javax.swing.JOptionPane;
  */
 public class JuegoAhorcado extends javax.swing.JFrame {
 
-  
     public ImageIcon imgs[];
     public JButton btns[];
     public String msgs[];
     public int ran;
     public int err;
     public String res[];
+    private int random;
+    private int cont = 4;
 
-    public JuegoAhorcado()throws IOException {
+    public JuegoAhorcado() throws IOException {
         initComponents();
         this.setTitle("Juego del Ahorcado");
         //Declaramos un icono nuevo para la calculadora
-        String dir2 = "https://image.flaticon.com/icons/png/128/46/46615.png";
-        BufferedImage icono=ImageIO.read(new URL(dir2));
-        setIconImage(icono);
+        setIconImage(new ImageIcon(("src/ec/edu/ups/imagenes/ahorcadoige.png")).getImage());
+        //BufferedImage icono = ImageIO.read(new URL(dir2));
+        //setIconImage(icono);
         //Posicion de la ventana al centro
         this.setLocationRelativeTo(null);
         //Cambiar tamaÃ±o de la ventana
-         setSize(800,500);
+        setSize(800, 500);
         imgs = new ImageIcon[6];
         btns = new JButton[27];
         msgs = new String[20];
 
         //imagenes del joven ahorcado lol
-        imgs[0] = new ImageIcon("src/ec/edu/ups/imagenes/1fin.png");       
+        imgs[0] = new ImageIcon("src/ec/edu/ups/imagenes/1fin.png");
         imgs[1] = new ImageIcon("src/ec/edu/ups/imagenes/2fin.png");
         imgs[2] = new ImageIcon("src/ec/edu/ups/imagenes/3fin.png");
         imgs[3] = new ImageIcon("src/ec/edu/ups/imagenes/4fin.png");
@@ -80,28 +81,26 @@ public class JuegoAhorcado extends javax.swing.JFrame {
         btns[26] = jButton27;
 
         //palabras por advinar, para agregar una nueva palabra sera necesario declararla al inicio
-        msgs[0] = "nutria".toUpperCase();
-        msgs[1] = "puma".toUpperCase();
-        msgs[2] = "rinoceronte".toUpperCase();
-        msgs[3] = "guacamayo".toUpperCase();
-        msgs[4] = "tiburon".toUpperCase();
-        msgs[5] = "cama".toUpperCase();
-        msgs[6] = "velador".toUpperCase();
-        msgs[7] = "cartera".toUpperCase();
-        msgs[8] = "celular".toUpperCase();
-        msgs[9] = "computadora".toUpperCase();
-        msgs[10] = "edificio".toUpperCase();
-        msgs[11] = "guerrero".toUpperCase();
-        msgs[12] = "carpintero".toUpperCase();
-        msgs[13] = "champu".toUpperCase();
-        msgs[14] = "dinosaurio".toUpperCase();
-        msgs[15] = "transformacion".toUpperCase();
-        msgs[16] = "bus".toUpperCase();
+        msgs[0] = "Ellanoteama".toUpperCase();
+        msgs[1] = "Puma".toUpperCase();
+        msgs[2] = "Rinoceronte".toUpperCase();
+        msgs[3] = "Guacamayo".toUpperCase();
+        msgs[4] = "Tiburon".toUpperCase();
+        msgs[5] = "Cama".toUpperCase();
+        msgs[6] = "Velador".toUpperCase();
+        msgs[7] = "Cartera".toUpperCase();
+        msgs[8] = "Celular".toUpperCase();
+        msgs[9] = "Computadora".toUpperCase();
+        msgs[10] = "Edificio".toUpperCase();
+        msgs[11] = "Guerrero".toUpperCase();
+        msgs[12] = "Carpintero".toUpperCase();
+        msgs[13] = "Champu".toUpperCase();
+        msgs[14] = "Dinosaurio".toUpperCase();
+        msgs[15] = "Transformacion".toUpperCase();
+        msgs[16] = "Bus".toUpperCase();
         msgs[17] = "Carro".toUpperCase();
         msgs[18] = "Computacion".toUpperCase();
         msgs[19] = "Supletorios".toUpperCase();
-        
-      
 
         //se asigna un evento a cada letra para comprobar que exista en la palabra a adivinar
         for (int i = 1; i < 27; i++) {
@@ -126,6 +125,7 @@ public class JuegoAhorcado extends javax.swing.JFrame {
         }
         //para generar una palabra aleatoriamente xD
         ran = (int) 0 + (int) (Math.random() * ((msgs.length - 1) + 1));
+
         //SEPARA EL MENSAJE POR PALABRAS
         String pal[] = msgs[ran].split(" ");
         res = new String[msgs[ran].length() + 1];
@@ -145,8 +145,10 @@ public class JuegoAhorcado extends javax.swing.JFrame {
     public void checarLetra(ActionEvent e) {
         JButton bt = (JButton) e.getSource();
         char c[];
+
         //busca la letra en la palabra despues de haber sido presionada
         for (int i = 1; i < 27; i++) {
+
             if (bt == btns[i]) {
                 //la tecla es inicializada
                 c = Character.toChars(64 + i);
@@ -166,6 +168,7 @@ public class JuegoAhorcado extends javax.swing.JFrame {
                             jTextPane1.setText(jTextPane1.getText() + "\n");
                         } else {
                             jTextPane1.setText(jTextPane1.getText() + re + " ");
+
                         }
                     }
                     //hace una comprobacion de las letras restantes y faltantes, en caso de que ya no haya letras sera ganador :D
@@ -184,11 +187,13 @@ public class JuegoAhorcado extends javax.swing.JFrame {
                     }
                     //SI LA LETRA NO ESTA EN EL MENSAGE, SE INCREMENTA EL ERROR Y SE CAMBIA LA IMAGEN
                 } else {
+                    cont--;
+                    errores.setText(Integer.toString(cont));
+
                     jButton29.setIcon(imgs[++err]);
                     //SI SE LLEGA A LOS 5 ERRORES ENTONCES SE PIERDE EL JUEGO Y SE MANDA EL MENSAGE DE:
                     if (err == 4) {
                         JOptionPane.showMessageDialog(this, "Intenta de nuevo la palabra era: \n" + msgs[ran]);
-                        iniciar();
                         return;
                     }
                 }
@@ -237,6 +242,10 @@ public class JuegoAhorcado extends javax.swing.JFrame {
         jButton14 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        txtpista = new javax.swing.JTextField();
+        botonpista1 = new javax.swing.JButton();
+        errores = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("MexicanHangedPerson By Pear Soft&Games");
@@ -262,20 +271,20 @@ public class JuegoAhorcado extends javax.swing.JFrame {
                 jButton28ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 177, 57));
+        getContentPane().add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 227, 177, 40));
 
         jTextPane1.setEditable(false);
         jTextPane1.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jScrollPane1.setViewportView(jTextPane1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 341, 75));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 370, 75));
 
         jButton29.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton29ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 60, 280, 378));
+        getContentPane().add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, 290, 378));
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
@@ -419,7 +428,38 @@ public class JuegoAhorcado extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 155, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/ups/imagenes/logo.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, -1, -1));
+
+        txtpista.setEditable(false);
+        txtpista.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        txtpista.setForeground(new java.awt.Color(0, 0, 255));
+        txtpista.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtpista.setEnabled(false);
+        txtpista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtpistaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtpista, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 370, 40));
+
+        botonpista1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        botonpista1.setText("Pista");
+        botonpista1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonpista1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botonpista1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 70, 30));
+
+        errores.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        errores.setText("4");
+        errores.setToolTipText("");
+        errores.setEnabled(false);
+        getContentPane().add(errores, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 30, 100, 30));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setText("Errores Restantes");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, -1, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -433,7 +473,12 @@ public class JuegoAhorcado extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
-        iniciar();        // TODO add your handling code here:
+        // TODO add your handling code here:
+        iniciar();
+        cont = 4;
+        errores.setText(Integer.toString(cont));
+        txtpista.setText(" ");
+
     }//GEN-LAST:event_jButton28ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
@@ -443,6 +488,77 @@ public class JuegoAhorcado extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void botonpista1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonpista1ActionPerformed
+        // TODO add your handling code here:
+        if (msgs[ran] == msgs[0]) {
+            txtpista.setText("Ley de vida".toUpperCase());
+
+        }
+        if (msgs[ran] == msgs[1]) {
+            txtpista.setText("Animal rapido o marca de zapatos".toUpperCase());
+        }
+
+        if (msgs[ran] == msgs[2]) {
+            txtpista.setText("Animal de gran cuerno".toUpperCase());
+        }
+        if (msgs[ran] == msgs[3]) {
+            txtpista.setText("Aparece en varios cuentos".toUpperCase());
+        }
+        if (msgs[ran] == msgs[4]) {
+            txtpista.setText("Animal de Mar muy peligroso".toUpperCase());
+        }
+        if (msgs[ran] == msgs[5]) {
+            txtpista.setText("En ella puedes tomar siestas o largas noches".toUpperCase());
+        }
+        if (msgs[random] == msgs[6]) {
+            txtpista.setText("Estante de tu cuarto".toUpperCase());
+        }
+        if (msgs[ran] == msgs[7]) {
+            txtpista.setText("Guardas tus cosas en ella".toUpperCase());
+        }
+        if (msgs[ran] == msgs[8]) {
+            txtpista.setText("Lo tienes por algun lado".toUpperCase());
+        }
+        if (msgs[ran] == msgs[9]) {
+            txtpista.setText("Estas jugando en ella".toUpperCase());
+        }
+        if (msgs[ran] == msgs[10]) {
+            txtpista.setText("Hay altos y bajos".toUpperCase());
+        }
+        if (msgs[ran] == msgs[11]) {
+            txtpista.setText("De gran valentia dispuesto a luchar".toUpperCase());
+        }
+        if (msgs[ran] == msgs[12]) {
+            txtpista.setText("Madera Madera".toUpperCase());
+        }
+        if (msgs[ran] == msgs[13]) {
+            txtpista.setText("Lo usan todo el mundo".toUpperCase());
+        }
+        if (msgs[ran] == msgs[14]) {
+            txtpista.setText("Se extinguieron Dios los tenga en su gloria".toUpperCase());
+        }
+        if (msgs[ran] == msgs[15]) {
+            txtpista.setText("Lo usan los transformers".toUpperCase());
+        }
+        if (msgs[ran] == msgs[16]) {
+            txtpista.setText("Muy grande y varias personas caben".toUpperCase());
+        }
+        if (msgs[ran] == msgs[17]) {
+            txtpista.setText("4 llantas y pa donde sea".toUpperCase());
+        }
+        if (msgs[ran] == msgs[18]) {
+            txtpista.setText("Que carrera sigues".toUpperCase());
+        }
+        if (msgs[ran] == msgs[19]) {
+            txtpista.setText("Lo vas a tener este ciclo".toUpperCase());
+        }
+
+    }//GEN-LAST:event_botonpista1ActionPerformed
+
+    private void txtpistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpistaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpistaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -475,18 +591,20 @@ public class JuegoAhorcado extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
-                 try {
+
+                try {
                     new JuegoAhorcado().setVisible(true);
                 } catch (IOException ex) {
                     Logger.getLogger(JuegoAhorcado.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
+
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonpista1;
+    private javax.swing.JTextField errores;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
@@ -517,8 +635,10 @@ public class JuegoAhorcado extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JTextField txtpista;
     // End of variables declaration//GEN-END:variables
 }
