@@ -182,7 +182,6 @@ public class JuegoAhorcado extends javax.swing.JFrame {
                     //al ser correcta se muestra un mensaje y se reinicia el juego
                     if (gano) {
                         JOptionPane.showMessageDialog(this, "Ganaste :3 \nReclama tu PS4 :D  !!!");
-                        iniciar();
                         return;
                     }
                     //SI LA LETRA NO ESTA EN EL MENSAGE, SE INCREMENTA EL ERROR Y SE CAMBIA LA IMAGEN
