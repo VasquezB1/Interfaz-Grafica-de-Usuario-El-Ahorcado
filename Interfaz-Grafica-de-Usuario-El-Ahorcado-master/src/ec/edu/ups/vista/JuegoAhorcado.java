@@ -32,7 +32,7 @@ public class JuegoAhorcado extends javax.swing.JFrame {
 
     public JuegoAhorcado() throws IOException {
         initComponents();
-        this.setTitle("Juego del Ahorcado");
+        this.setTitle("Juego de Ahorcado");
         //Declaramos un icono nuevo para la calculadora
         setIconImage(new ImageIcon(("src/ec/edu/ups/imagenes/ahorcadoige.png")).getImage());
         //BufferedImage icono = ImageIO.read(new URL(dir2));
