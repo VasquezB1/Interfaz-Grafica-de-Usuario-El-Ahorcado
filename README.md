@@ -19,6 +19,7 @@ ACTIVIDADES DESARROLLADAS
 	El Ahorcado
 Se pide construir el juego del ahorcado en el lenguaje de programación de Java con base a layouts, botones, imágenes y cajas de texto.
 •	Abra un contador el cual siempre indicara cuantos errores le quedan al jugar para que así este pueda jugar y ver cuantas opciones tiene para poder ganar.
+
 •	Si se desease puede conseguir una pista para poder adivinar mucho más rápido las palabras estas las cuales están de acuerdo a animales y materia de la universidad.
 ![image](https://user-images.githubusercontent.com/49033314/57341128-b740eb80-70fe-11e9-948e-7398256b1706.png)
 
