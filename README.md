@@ -56,4 +56,5 @@ Firma de estudiante: ![image](https://user-images.githubusercontent.com/49033314
 
 ![animales-divertidos2](https://user-images.githubusercontent.com/49033314/97130261-eaba7000-170e-11eb-8995-13703f9ab41b.png)
 
+![animales-divertidos2](https://user-images.githubusercontent.com/49033314/97130390-51d82480-170f-11eb-8afd-f1ac23a2bee6.png)
 
