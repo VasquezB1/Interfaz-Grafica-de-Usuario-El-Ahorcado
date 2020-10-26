@@ -54,4 +54,6 @@ Nombre de estudiante: Byron Simón Vásquez Saldaña
 
 Firma de estudiante: ![image](https://user-images.githubusercontent.com/49033314/57341165-e35c6c80-70fe-11e9-8f16-01406ae130ce.png)
 
+![animales-divertidos2](https://user-images.githubusercontent.com/49033314/97130261-eaba7000-170e-11eb-8995-13703f9ab41b.png)
+
 
